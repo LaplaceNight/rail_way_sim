@@ -1,6 +1,6 @@
 from datetime import datetime
 import numpy as np
-import sys
+
 from scipy.stats import truncnorm
 
 def datetime_to_seconds(time_str):
@@ -11,7 +11,6 @@ def time_to_seconds(time_str):
     time_format = "%H:%M:%S"
     time_object = datetime.strptime(time_str, time_format)
 
-    # 计算总秒数
     total_seconds = time_object.hour * 3600 + time_object.minute * 60 + time_object.second
     return total_seconds
 def seconds_to_time(seconds):
@@ -19,7 +18,6 @@ def seconds_to_time(seconds):
     return time_object.strftime("%H:%M:%S")
 
 def truncated_normal_numpy(a, b, mean, std_dev):
-    # 使用Numpy生成截断正态分布的随机样本
     samples = np.random.normal(loc=mean, scale=std_dev)
     while not (a < samples < b):
         samples = np.random.normal(loc=mean, scale=std_dev)
