@@ -121,7 +121,7 @@ def get_station_line(path):
 # line_on,line_off,line_change,station_change=get_station_line(path)
 in_channel=1
 out_channel=1
-with open("od_96_93.csv","r") as od,open("od_xiaoshi_liuzhou.csv","w",newline="") as out:
+with open("od_origin.csv","r") as od,open("od_prepared.csv","w",newline="") as out:
     original=csv.reader(od)
     writer = csv.writer(out)
     for row in original:
